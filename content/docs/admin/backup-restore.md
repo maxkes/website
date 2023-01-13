@@ -97,6 +97,13 @@ sudo mysql -u root bookstack < bookstack.backup.sql
 If you are restoring to a new version of BookStack you will have to run
 `php artisan migrate` after restore to perform any required updates to the database.
 
+Maybe you have to update the password of the database user. For Ubuntu you can:
+´´´
+sudo mysql
+ALTER USER 'valueOfDB_USERNAME'@'localhost' IDENTIFIED BY 'valueOfDB_PASSWORD';
+```
+
+
 #### Files
 
 To restore the files you simply need to copy them from the backup archive
